@@ -546,7 +546,7 @@
       <h1>You've outgrown the all-inclusive. Let's design the trip you'll still be talking about at 70.</h1>
       <p class="lede">I design adventure and expedition trips for travelers who are done with resorts and ready for the real thing — the Inca Trail, a camp on the edge of Kruger, the Dolomites, a small-ship passage through the Galápagos. The kind of places you don't stumble into by accident.</p>
       <div class="cta-row">
-        <a class="btn-primary" href="#/contact">Start a Discovery Call</a>
+        <a class="btn-primary" href="before-we-talk.html">Start a Discovery Call</a>
       </div>
     </div>
     <div class="hero-art">
@@ -682,9 +682,9 @@
     <div class="section-head centered">
       <p class="eyebrow">Ready when you are</p>
       <h2>Tell me about the trip you're imagining</h2>
-      <p>Who's going, roughly when, and what you want the trip to feel like — that's plenty to start with. I'd love to hear it.</p>
+      <p>A few questions about who's going, roughly when, and what you have in mind are all it takes to start. I'd love to hear it.</p>
     </div>
-    <a class="btn-primary" href="#/contact">Start a Discovery Call</a>
+    <a class="btn-primary" href="before-we-talk.html">Start a Discovery Call</a>
     <p style="margin-top:20px;"><a href="#/trips" style="color:var(--text-soft); font-size:0.92rem; text-decoration:underline;">Not sure if a designed trip is right for you yet? Read about the trip I designed for one couple's Inca Trail crossing &rarr;</a></p>
   </section>
 
@@ -806,7 +806,7 @@
       </details>
       <details class="faq-item">
         <summary><span>How do we get started?</span><span class="faq-icon" aria-hidden="true"></span></summary>
-        <div class="faq-a"><p>Send a note through the <a href="#/contact">contact page</a> with who's going, roughly when, and what you're imagining. I'll follow up from there.</p></div>
+        <div class="faq-a"><p>Answer a few questions on <a href="before-we-talk.html">this short form</a>: who's going, roughly when, and what you're imagining. I'll follow up from there.</p></div>
       </details>
     </div>
   </section>
@@ -830,61 +830,11 @@
         </div>
       </div>
 
-      <form class="inquiry" id="inquiryForm">
-        <div class="field-row">
-          <div class="field">
-            <label for="fname">Name</label>
-            <input id="fname" name="name" type="text" required autocomplete="name">
-          </div>
-          <div class="field">
-            <label for="femail">Email</label>
-            <input id="femail" name="email" type="email" required autocomplete="email">
-          </div>
-        </div>
-        <div class="field-row">
-          <div class="field">
-            <label for="ftype">Trip type</label>
-            <select id="ftype" name="type">
-              <option>Trekking or hiking</option>
-              <option>Safari</option>
-              <option>Expedition cruise</option>
-              <option>Something else (family, milestone, etc.)</option>
-              <option>Not sure yet</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="fdates">Rough dates</label>
-            <input id="fdates" name="dates" type="text" placeholder="e.g. next spring">
-          </div>
-        </div>
-        <div class="field-row">
-          <div class="field">
-            <label for="fbudget">Estimated trip budget (excluding flights)</label>
-            <select id="fbudget" name="budget">
-              <option>Under $5,000</option>
-              <option>$5,000&ndash;$10,000</option>
-              <option>$10,000&ndash;$20,000</option>
-              <option>$20,000+</option>
-              <option>Not sure yet</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="fscope">Which best describes this trip?</label>
-            <select id="fscope" name="scope">
-              <option>A single getaway</option>
-              <option>Multi-stop itinerary</option>
-              <option>Complex logistics (multiple parties, or an especially involved trip)</option>
-              <option>Not sure yet</option>
-            </select>
-          </div>
-        </div>
-        <div class="field">
-          <label for="fmessage">Tell me about the trip</label>
-          <textarea id="fmessage" name="message" required placeholder="Who's going, where you're thinking, what you want it to feel like..."></textarea>
-        </div>
-        <button type="submit" class="btn-primary">Send inquiry</button>
-        <p class="form-status" id="formStatus" aria-live="polite"></p>
-      </form>
+      <div class="inquiry-card" style="background:var(--surface); border:1px solid var(--border); border-radius:3px 18px 3px 18px; padding:clamp(26px,4vw,38px); align-self:start;">
+        <h2 style="font-size:clamp(1.5rem,2.6vw,1.9rem);">A few questions first</h2>
+        <p style="margin:14px 0 26px; color:var(--text-soft); max-width:44ch;">The form takes about four minutes and gives me the basics, so our first conversation can be about the trip itself.</p>
+        <a class="btn-primary" href="before-we-talk.html">Open the form</a>
+      </div>
     </div>
   </section>
 </div>
@@ -1056,25 +1006,6 @@
 
   window.addEventListener("hashchange", render);
   render();
-
-  /* ---------- contact form (mailto fallback, no backend) ---------- */
-  var form = document.getElementById("inquiryForm");
-  var status = document.getElementById("formStatus");
-  form.addEventListener("submit", function(e){
-    e.preventDefault();
-    var data = new FormData(form);
-    var subject = "Trip inquiry: " + (data.get("type") || "");
-    var body = "Name: " + data.get("name") + "\n" +
-               "Email: " + data.get("email") + "\n" +
-               "Trip type: " + data.get("type") + "\n" +
-               "Rough dates: " + data.get("dates") + "\n" +
-               "Estimated budget: " + data.get("budget") + "\n" +
-               "Trip scope: " + data.get("scope") + "\n\n" +
-               data.get("message");
-    var mailto = "mailto:renea.scoble@fora.travel?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-    window.location.href = mailto;
-    status.textContent = "Opening your email app to send this along — if nothing opens, email renea.scoble@fora.travel directly.";
-  });
 
 })();
 </script>

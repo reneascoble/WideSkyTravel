@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Before we talk | Wide Sky Travel</title>
+<meta name="description" content="A few questions to answer before your discovery call with Renea Scoble of Wide Sky Travel.">
+<!-- People reach this page from the site or from a link Renea sends, so search engines are asked not to list it. -->
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%23E2D5B2'/%3E%3Ccircle cx='20' cy='24' r='14' fill='none' stroke='%2395432A' stroke-width='2.4'/%3E%3Cpath d='M4 24 A16 16 0 0 1 36 24' fill='none' stroke='%2395432A' stroke-width='2.4' opacity='0.55'/%3E%3Cline x1='2' y1='30' x2='38' y2='30' stroke='%2395432A' stroke-width='2.4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&family=Archivo:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Colors and type are copied from wideskytravel.com so this page reads as part of the site. */
+  :root{
+    --bg:#E2D5B2;
+    --surface:#F2E8CC;
+    --text:#1E1811;
+    --text-soft:#4E4030;
+    --accent:#95432A;
+    --accent-ink:#FBF3E4;
+    --accent-2:#24534C;
+    --border:rgba(30,24,17,0.16);
+    --border-strong:rgba(30,24,17,0.32);
+    --shadow:rgba(30,24,17,0.24);
+    --focus:#24534C;
+    --error:#8A2C1A;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14100B;
+      --surface:#1D170F;
+      --text:#EAE0C8;
+      --text-soft:#B9A886;
+      --accent:#C97A52;
+      --accent-ink:#221009;
+      --accent-2:#4C8C80;
+      --border:rgba(234,224,200,0.14);
+      --border-strong:rgba(234,224,200,0.28);
+      --shadow:rgba(0,0,0,0.45);
+      --focus:#4C8C80;
+      --error:#E79B82;
+    }
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:"Work Sans", -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2{
+    font-family:"Fraunces", Georgia, serif;
+    font-weight:600;
+    line-height:1.1;
+    letter-spacing:-0.01em;
+    text-wrap:balance;
+    margin:0;
+  }
+  a{color:var(--accent);}
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:3px solid var(--focus);
+    outline-offset:2px;
+  }
+
+  /* ---------- header ---------- */
+  header.site{border-bottom:1px solid var(--border);}
+  .nav-inner{
+    max-width:760px; margin:0 auto;
+    padding:16px clamp(20px,4vw,40px);
+  }
+  .brand{display:inline-flex; align-items:center; gap:12px; text-decoration:none; color:var(--text);}
+  .brand svg{width:34px; height:34px; flex:none; color:var(--accent);}
+  .brand-word{font-family:"Fraunces", serif; font-weight:600; font-size:1.15rem; letter-spacing:-0.01em; line-height:1.25;}
+  .brand-word span{
+    display:block; font-family:"Archivo", sans-serif; font-weight:500; font-size:0.62rem;
+    letter-spacing:0.18em; text-transform:uppercase; color:var(--text-soft);
+  }
+
+  /* ---------- page ---------- */
+  main{
+    max-width:760px; margin:0 auto;
+    padding:clamp(40px,7vw,72px) clamp(20px,4vw,40px) clamp(56px,9vw,96px);
+  }
+  .intro h1{font-size:clamp(2.2rem,6vw,3.1rem);}
+  .intro p{margin:18px 0 0; max-width:52ch; color:var(--text-soft); font-size:1.08rem;}
+
+  form.precall{
+    margin-top:clamp(28px,5vw,44px);
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:3px 18px 3px 18px;
+    padding:clamp(22px,4.5vw,44px);
+  }
+  .group + .group{margin-top:clamp(34px,5vw,48px); padding-top:clamp(28px,4.5vw,40px); border-top:1px solid var(--border);}
+  .group h2{font-size:clamp(1.45rem,3.4vw,1.75rem); margin-bottom:24px;}
+
+  .q{margin:0 0 26px; padding:0; border:0; min-width:0;}
+  .q:last-child{margin-bottom:0;}
+  .q > label, .q > legend{
+    display:block; padding:0;
+    font-weight:600; font-size:1.02rem; line-height:1.4; color:var(--text);
+  }
+  .optional{font-weight:400; color:var(--text-soft);}
+  .help{margin:5px 0 0; font-size:0.94rem; line-height:1.5; color:var(--text-soft); max-width:58ch;}
+
+  .q input[type="text"], .q input[type="email"], .q input[type="tel"], .q textarea{
+    display:block; width:100%; margin-top:10px;
+    font-family:inherit; font-size:1rem; line-height:1.5; color:var(--text);
+    background:var(--bg); border:1px solid var(--border-strong); border-radius:8px;
+    padding:12px 14px;
+  }
+  .q textarea{resize:vertical; min-height:104px;}
+  .pair{display:grid; grid-template-columns:1fr 1fr; gap:0 18px;}
+  @media (max-width:560px){.pair{grid-template-columns:1fr;}}
+
+  /* Choices are full-width rows so they are easy to tap on a phone. */
+  .choices{display:grid; gap:8px; margin-top:12px;}
+  .agree .choices{margin-top:0;}
+  .choice{
+    display:flex; align-items:flex-start; gap:12px;
+    padding:12px 14px;
+    background:var(--bg); border:1px solid var(--border-strong); border-radius:8px;
+    cursor:pointer; line-height:1.45;
+  }
+  .choice input{
+    flex:none; width:20px; height:20px; margin:2px 0 0;
+    accent-color:var(--accent); cursor:pointer;
+  }
+  .choice:hover{border-color:var(--accent);}
+  .choice:has(input:checked){border-color:var(--accent); box-shadow:inset 0 0 0 1px var(--accent);}
+  .choice:has(input:focus-visible){outline:3px solid var(--focus); outline-offset:2px;}
+  .choice input:focus-visible{outline:none;}
+  .reveal{margin-top:8px;}
+  .reveal[hidden]{display:none;}
+  .reveal label{display:block; font-size:0.94rem; color:var(--text-soft);}
+  .reveal input{margin-top:6px !important;}
+
+  .error{margin:8px 0 0; font-size:0.94rem; font-weight:500; color:var(--error);}
+  .error:empty{display:none;}
+
+  /* ---------- send ---------- */
+  .send{margin-top:clamp(30px,5vw,40px);}
+  button{
+    font-family:"Archivo", sans-serif; font-weight:600; letter-spacing:0.04em;
+    text-transform:uppercase; font-size:0.9rem; cursor:pointer; border:none;
+  }
+  .btn-primary{
+    background:var(--accent); color:var(--accent-ink);
+    padding:15px 28px; border-radius:2px 9px 2px 9px;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 10px 24px -8px var(--shadow);}
+  .btn-primary[disabled]{opacity:0.6; cursor:default; transform:none; box-shadow:none;}
+  .btn-secondary{
+    background:transparent; color:var(--text);
+    padding:12px 20px; border:1.5px solid var(--border-strong); border-radius:2px 9px 2px 9px;
+  }
+  .btn-secondary:hover{border-color:var(--accent);}
+  .form-status{margin:16px 0 0; font-size:0.96rem; color:var(--error); max-width:58ch;}
+  .form-status:empty{display:none;}
+  .fallback{margin-top:12px;}
+  .fallback[hidden]{display:none;}
+
+  /* ---------- confirmation ---------- */
+  .done[hidden]{display:none;}
+  .done h1{font-size:clamp(2.2rem,6vw,3.1rem);}
+  .done p{margin:18px 0 0; max-width:50ch; font-size:1.08rem; color:var(--text-soft);}
+  .done .signoff{margin-top:30px; font-family:"Fraunces", Georgia, serif; font-style:italic; font-weight:500; font-size:1.3rem; line-height:1.35; color:var(--text);}
+  .done .back{margin-top:34px; font-size:0.96rem;}
+
+  footer.site{border-top:1px solid var(--border);}
+  .footer-inner{max-width:760px; margin:0 auto; padding:30px clamp(20px,4vw,40px) 40px;}
+  .footer-brand{font-family:"Fraunces", serif; font-weight:600; font-size:1.05rem;}
+  .footer-meta{margin:8px 0 0; font-size:0.88rem; color:var(--text-soft);}
+
+  @media (prefers-reduced-motion: reduce){
+    .btn-primary{transition:none;}
+    .btn-primary:hover{transform:none;}
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mark" viewBox="0 0 40 40">
+    <circle cx="20" cy="24" r="14" fill="none" stroke="currentColor" stroke-width="2.4"/>
+    <path d="M4 24 A16 16 0 0 1 36 24" fill="none" stroke="currentColor" stroke-width="2.4" opacity="0.55"/>
+    <line x1="2" y1="30" x2="38" y2="30" stroke="currentColor" stroke-width="2.4"/>
+  </symbol>
+</svg>
+
+<header class="site">
+  <div class="nav-inner">
+    <a class="brand" href="/" aria-label="Wide Sky Travel, home">
+      <svg viewBox="0 0 40 40"><use href="#mark"/></svg>
+      <span class="brand-word">Wide Sky Travel<span>Renea Scoble · Fora Travel Advisor</span></span>
+    </a>
+  </div>
+</header>
+
+<main>
+
+  <div class="intro" id="intro">
+    <h1>Before we talk</h1>
+    <p>These questions give me the basics before our call, so we can spend that time on the trip itself. It takes about four minutes. Rough answers are welcome, and &ldquo;not sure yet&rdquo; is always a fine answer.</p>
+  </div>
+
+  <form class="precall" id="precallForm">
+
+    <!-- Spam trap. People never see this box; automated spam fills it in and gets rejected. -->
+    <input type="checkbox" name="botcheck" id="botcheck" tabindex="-1" autocomplete="off" style="display:none">
+
+    <section class="group">
+      <h2>First, you</h2>
+
+      <div class="q">
+        <label for="name">Your name</label>
+        <input id="name" name="name" type="text" required autocomplete="name">
+      </div>
+
+      <div class="pair">
+        <div class="q">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required autocomplete="email">
+        </div>
+        <div class="q">
+          <label for="phone">Best number for our call</label>
+          <input id="phone" name="phone" type="tel" required autocomplete="tel" aria-describedby="phoneHelp">
+          <p class="help" id="phoneHelp">The number I should call when we talk.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="group">
+      <h2>The trip</h2>
+
+      <div class="q">
+        <label for="destination">Where are you thinking of going?</label>
+        <p class="help" id="destinationHelp">A country, a region, a trail, or a few places you&rsquo;re weighing. A direction is all I need.</p>
+        <input id="destination" name="destination" type="text" required aria-describedby="destinationHelp">
+      </div>
+
+      <fieldset class="q">
+        <legend>How settled is that?</legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="settled" value="It's decided" required><span>It&rsquo;s decided</span></label>
+          <label class="choice"><input type="radio" name="settled" value="I have a few ideas and I'm open to yours"><span>I have a few ideas and I&rsquo;m open to yours</span></label>
+          <label class="choice"><input type="radio" name="settled" value="Wide open. I'd like your recommendations"><span>Wide open. I&rsquo;d like your recommendations</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="q" id="tripTypeQ">
+        <legend>What kind of trip do you have in mind?</legend>
+        <p class="help">Choose any that fit.</p>
+        <div class="choices">
+          <label class="choice"><input type="checkbox" name="tripType" value="Trekking or hiking"><span>Trekking or hiking</span></label>
+          <label class="choice"><input type="checkbox" name="tripType" value="Safari"><span>Safari</span></label>
+          <label class="choice"><input type="checkbox" name="tripType" value="Expedition cruise"><span>Expedition cruise</span></label>
+          <label class="choice"><input type="checkbox" name="tripType" value="A multi-stop trip through a country or region"><span>A multi-stop trip through a country or region</span></label>
+          <label class="choice"><input type="checkbox" name="tripType" value="One place, explored well"><span>One place, explored well</span></label>
+          <label class="choice"><input type="checkbox" name="tripType" value="Not sure yet"><span>Not sure yet</span></label>
+          <label class="choice"><input type="checkbox" name="tripType" value="Something else" id="tripOther"><span>Something else</span></label>
+        </div>
+        <div class="reveal" id="tripOtherWrap" hidden>
+          <label for="tripOtherText">Tell me more</label>
+          <input id="tripOtherText" name="tripOtherText" type="text">
+        </div>
+        <p class="error" id="tripTypeError" role="alert"></p>
+      </fieldset>
+
+      <fieldset class="q">
+        <legend>How active do you want this trip to be?</legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="active" value="Easygoing: light activity and plenty of downtime" required><span>Easygoing: light activity and plenty of downtime</span></label>
+          <label class="choice"><input type="radio" name="active" value="Balanced: something active most days, with time to rest"><span>Balanced: something active most days, with time to rest</span></label>
+          <label class="choice"><input type="radio" name="active" value="Active: on the move most of the day"><span>Active: on the move most of the day</span></label>
+          <label class="choice"><input type="radio" name="active" value="Challenging: I want to be pushed physically"><span>Challenging: I want to be pushed physically</span></label>
+          <label class="choice"><input type="radio" name="active" value="Not sure yet"><span>Not sure yet</span></label>
+        </div>
+      </fieldset>
+
+      <div class="q">
+        <label for="who">Who&rsquo;s traveling?</label>
+        <p class="help" id="whoHelp">For example, &ldquo;My sister and me&rdquo; or &ldquo;Six of us: four adults and two kids, ages 11 and 14.&rdquo;</p>
+        <input id="who" name="who" type="text" required aria-describedby="whoHelp">
+      </div>
+    </section>
+
+    <section class="group">
+      <h2>Timing</h2>
+
+      <div class="q">
+        <label for="when">When would you like to go?</label>
+        <p class="help" id="whenHelp">A month or season is enough, such as &ldquo;late September 2027.&rdquo;</p>
+        <input id="when" name="when" type="text" required aria-describedby="whenHelp">
+      </div>
+
+      <fieldset class="q">
+        <legend>About how long?</legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="duration" value="Under a week" required><span>Under a week</span></label>
+          <label class="choice"><input type="radio" name="duration" value="7 to 10 days"><span>7 to 10 days</span></label>
+          <label class="choice"><input type="radio" name="duration" value="11 to 14 days"><span>11 to 14 days</span></label>
+          <label class="choice"><input type="radio" name="duration" value="More than two weeks"><span>More than two weeks</span></label>
+          <label class="choice"><input type="radio" name="duration" value="Not sure yet"><span>Not sure yet</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="q">
+        <legend>How much can your dates move?</legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="flex" value="They're fixed" required><span>They&rsquo;re fixed</span></label>
+          <label class="choice"><input type="radio" name="flex" value="A few days either way"><span>A few days either way</span></label>
+          <label class="choice"><input type="radio" name="flex" value="A week or more"><span>A week or more</span></label>
+          <label class="choice"><input type="radio" name="flex" value="Wide open"><span>Wide open</span></label>
+        </div>
+      </fieldset>
+
+      <div class="q">
+        <label for="from">Where will you fly from?</label>
+        <p class="help" id="fromHelp">Your home airport or city. If your group is coming from more than one place, list them all.</p>
+        <input id="from" name="from" type="text" required aria-describedby="fromHelp">
+      </div>
+    </section>
+
+    <section class="group">
+      <h2>Investment</h2>
+
+      <fieldset class="q">
+        <legend>What total investment do you have in mind for this trip?</legend>
+        <p class="help">For everyone traveling, not including flights. A range is all I need, and we&rsquo;ll talk about what it makes possible when we speak.</p>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="budget" value="Under $5,000" required><span>Under $5,000</span></label>
+          <label class="choice"><input type="radio" name="budget" value="$5,000–$10,000"><span>$5,000&ndash;$10,000</span></label>
+          <label class="choice"><input type="radio" name="budget" value="$10,000–$20,000"><span>$10,000&ndash;$20,000</span></label>
+          <label class="choice"><input type="radio" name="budget" value="$20,000–$35,000"><span>$20,000&ndash;$35,000</span></label>
+          <label class="choice"><input type="radio" name="budget" value="More than $35,000"><span>More than $35,000</span></label>
+          <label class="choice"><input type="radio" name="budget" value="Not sure yet, would like guidance"><span>I&rsquo;m not sure yet and would like your guidance</span></label>
+        </div>
+      </fieldset>
+    </section>
+
+    <section class="group">
+      <h2>In your words</h2>
+
+      <div class="q">
+        <label for="spark">What put this trip on your mind?</label>
+        <p class="help" id="sparkHelp">A milestone, a place you&rsquo;ve wanted to see for years, something a friend said. A sentence or two is plenty.</p>
+        <textarea id="spark" name="spark" required aria-describedby="sparkHelp"></textarea>
+      </div>
+
+      <div class="q">
+        <label for="musts">Is there anything this trip must include, must avoid, or that I should know before we talk? <span class="optional">(optional)</span></label>
+        <textarea id="musts" name="musts"></textarea>
+      </div>
+    </section>
+
+    <section class="group agree">
+      <h2>Before you send</h2>
+
+      <div class="q">
+        <div class="choices">
+          <label class="choice">
+            <input type="checkbox" name="feeAck" id="feeAck" required>
+            <span>I understand that Wide Sky Travel charges a planning fee of $195 to $595, depending on how involved the trip is. The fee for my trip will be confirmed after our call, before any planning begins.</span>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <div class="send">
+      <button type="submit" class="btn-primary" id="sendBtn">Send to Renea</button>
+      <p class="form-status" id="formStatus" role="alert"></p>
+      <div class="fallback" id="fallback" hidden>
+        <button type="button" class="btn-secondary" id="copyBtn">Copy my answers</button>
+      </div>
+    </div>
+  </form>
+
+  <div class="done" id="done" hidden>
+    <h1 id="doneHeading" tabindex="-1">Thank you. I have it.</h1>
+    <p>I&rsquo;ll read this before we talk, so our call can go straight to the trip itself. If we haven&rsquo;t set a time yet, I&rsquo;ll be in touch to find one.</p>
+    <p class="signoff">Wanderfully,<br>Renea</p>
+    <p class="back"><a href="/">Back to Wide Sky Travel</a></p>
+  </div>
+
+</main>
+
+<footer class="site">
+  <div class="footer-inner">
+    <div class="footer-brand">Wide Sky Travel</div>
+    <p class="footer-meta">Renea Scoble · Fora Travel Advisor · Virtuoso-affiliated · Huntsville, Alabama</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* Web3Forms access key: sends each submission to Renea's inbox. */
+  var WEB3FORMS_KEY = "be9697cf-7558-4c26-ae0a-da9ae33e3ebf";
+
+  var CONTACT_EMAIL = "renea.scoble@fora.travel";
+
+  var form = document.getElementById("precallForm");
+  var intro = document.getElementById("intro");
+  var done = document.getElementById("done");
+  var sendBtn = document.getElementById("sendBtn");
+  var status = document.getElementById("formStatus");
+  var fallback = document.getElementById("fallback");
+  var copyBtn = document.getElementById("copyBtn");
+  var tripOther = document.getElementById("tripOther");
+  var tripOtherWrap = document.getElementById("tripOtherWrap");
+  var tripOtherText = document.getElementById("tripOtherText");
+  var tripTypeError = document.getElementById("tripTypeError");
+
+  // "Something else" reveals a line to say what.
+  tripOther.addEventListener("change", function(){
+    tripOtherWrap.hidden = !tripOther.checked;
+    if (tripOther.checked) { tripOtherText.focus(); }
+  });
+
+  function val(name){
+    var el = form.elements[name];
+    return el && el.value ? String(el.value).trim() : "";
+  }
+
+  function tripTypes(){
+    var boxes = form.querySelectorAll('input[name="tripType"]:checked');
+    var out = [];
+    for (var i = 0; i < boxes.length; i++){
+      var v = boxes[i].value;
+      if (v === "Something else" && tripOtherText.value.trim()){
+        v = "Something else: " + tripOtherText.value.trim();
+      }
+      out.push(v);
+    }
+    return out;
+  }
+
+  // The answers, in the order Renea reads them.
+  function answers(){
+    return [
+      ["Name", val("name")],
+      ["Email", val("email")],
+      ["Best number for our call", val("phone")],
+      ["Where they're thinking of going", val("destination")],
+      ["How settled", val("settled")],
+      ["Kind of trip", tripTypes().join("; ")],
+      ["How active", val("active")],
+      ["Who's traveling", val("who")],
+      ["When", val("when")],
+      ["How long", val("duration")],
+      ["Date flexibility", val("flex")],
+      ["Flying from", val("from")],
+      ["Total investment (excluding flights)", val("budget")],
+      ["What put this trip on their mind", val("spark")],
+      ["Must include, must avoid, or good to know", val("musts") || "(left blank)"],
+      ["Planning fee acknowledged", form.elements["feeAck"].checked ? "Yes" : "No"]
+    ];
+  }
+
+  function asText(){
+    return answers().map(function(pair){ return pair[0] + ": " + pair[1]; }).join("\n");
+  }
+
+  function showFailure(){
+    status.innerHTML = "";
+    status.appendChild(document.createTextNode(
+      "Your answers didn\u2019t send. Check your connection and try again, or copy them and email them to "
+    ));
+    var a = document.createElement("a");
+    a.href = "mailto:" + CONTACT_EMAIL + "?subject=" + encodeURIComponent("Before we talk: " + val("name"));
+    a.textContent = CONTACT_EMAIL;
+    status.appendChild(a);
+    status.appendChild(document.createTextNode("."));
+    fallback.hidden = false;
+    sendBtn.disabled = false;
+    sendBtn.textContent = "Send to Renea";
+  }
+
+  copyBtn.addEventListener("click", function(){
+    var text = asText();
+    function copied(){ copyBtn.textContent = "Copied"; }
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(copied, legacyCopy);
+    } else {
+      legacyCopy();
+    }
+    function legacyCopy(){
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); copied(); } catch (e) {}
+      document.body.removeChild(ta);
+    }
+  });
+
+  form.addEventListener("change", function(e){
+    if (e.target && e.target.name === "tripType" && tripTypes().length){
+      tripTypeError.textContent = "";
+    }
+  });
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    status.textContent = "";
+    fallback.hidden = true;
+
+    // The browser has already checked the required fields. Checkbox groups need a manual check.
+    if (!tripTypes().length){
+      tripTypeError.textContent = "Choose at least one. \u201cNot sure yet\u201d counts.";
+      document.getElementById("tripTypeQ").scrollIntoView({block:"center"});
+      form.querySelector('input[name="tripType"]').focus();
+      return;
+    }
+
+    // Spam trap: a filled hidden box means this isn't a person.
+    if (document.getElementById("botcheck").checked){ return; }
+
+    sendBtn.disabled = true;
+    sendBtn.textContent = "Sending\u2026";
+
+    if (!WEB3FORMS_KEY || WEB3FORMS_KEY.indexOf("PASTE_YOUR") === 0){
+      showFailure();
+      return;
+    }
+
+    var payload = {
+      access_key: WEB3FORMS_KEY,
+      subject: "Before we talk: " + val("name"),
+      from_name: "Wide Sky Travel pre-call form",
+      name: val("name"),
+      email: val("email")
+    };
+    answers().forEach(function(pair){
+      if (pair[0] !== "Name" && pair[0] !== "Email"){ payload[pair[0]] = pair[1]; }
+    });
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {"Content-Type": "application/json", "Accept": "application/json"},
+      body: JSON.stringify(payload)
+    })
+    .then(function(res){ return res.json(); })
+    .then(function(data){
+      if (data && data.success){
+        form.hidden = true;
+        intro.hidden = true;
+        done.hidden = false;
+        window.scrollTo(0, 0);
+        document.getElementById("doneHeading").focus();
+      } else {
+        showFailure();
+      }
+    })
+    .catch(showFailure);
+  });
+})();
+</script>
+</body>
+</html>
